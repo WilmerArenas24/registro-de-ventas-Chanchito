@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Ajusta esto si es necesario -->
+    <script src="js/script.js" defer></script>
+    <script src="js/plantillas.js"></script>
+</head>
+<body>
+
+  
+    <!--La cabecera-->
+    <header class="header">
+      <div class="left">
+        <img src="img/happy.png" alt="Logo de Chanchito Feliz">
+        <h1>Registro de ventas Chanchito Feliz</h1>
+      </div>
+      <div class="search">
+        
+        <form id="searchForm" action="/search" method="GET">
+          <input type="text" id="cedula" name="cedula" required placeholder="Ingrese el documento...">
+          <button type="submit">Buscar</button>
+        </form>
+        
+      
+      </div>
+    </header>
+
+        <!--Barra de navegación-->
+        <nav class="nav">
+            <ul>
+              <li><a href="subir.html">Subir archivo</a></li>
+              <li><a href="descargar.html">Descargar</a></li>
+
+              <li><a href="#" class="nav-link" data-campos="creacionComplemento">Creación de complementos</a></li>
+              <li><a href="#" class="nav-link" data-campos="novedad_cancelacion">Cancelación/Novedad</a></li>
+              <li><a href="#" class="nav-link" data-campos="prevalidacionOK">Prevalidación OK</a></li>
+              <li><a href="#" class="nav-link" data-campos="ventaok">Venta Ok</a></li>
+
+            </ul>
+          </nav>
+      
+    <!--Aquí van los resultados-->
+    <section class="content">
+     
+      <form action="" id="resultado-busqueda">
+
+        <div class="resultado-form">
+          <label for="documento">Cedula</label>
+          <input type="text" id="documento" name="documento" readonly>
+        </div>
+        
+        <div class="resultado-form">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" >
+        </div>
+
+        <div class="resultado-form">
+          <label for="ciudad">Ciudad</label>
+          <input type="text" id="ciudad" name="ciudad" >
+        </div>
+
+        <div class="resultado-form">
+          <label for="nombreConjunto">Dirección</label>
+          <input type="text" id="nombreConjunto" name="nombreConjunto" >
+        </div>
+
+        <div class="resultado-form">
+          <label for="direccion">Dirección</label>
+          <input type="text" id="direccion" name="direccion" >
+        </div>
+
+        <div class="resultado-form">
+          <label for="fechaInstalacion">Instalación</label>
+          <input type="text" id="fechaInstalacion" name="fechaInstalacion" >
+        </div>
+
+        <div class="resultado-form">
+          <label for="franja">Franja</label>
+          <input type="text" id="franja" name="franja">
+        </div>
+
+        <div class="resultado-form">
+          <label for="tipoVenta">Tipo de Venta</label readonly>
+          <input type="text" id="tipoVenta" name="tipoVenta" >
+        </div>
+
+        <div class="resultado-form">
+          <label for="fechaExpedicion">Fecha de Exp</label>
+          <input type="text" id="fechaExpedicion" name="fechaExpedicion" >
+        </div>
+
+        <div class="resultado-form">
+          <label for="celular1">Celular 1</label>
+          <input type="text" id="celular1" name="celular1" >
+        </div>
+
+        <div class="resultado-form">
+          <label for="nombreReferencia">Referencia</label>
+          <input type="text" id="nombreReferencia" name="nombreReferencia" >
+        </div>
+
+        <div class="resultado-form">
+          <label for="celular2">Celular 2</label>
+          <input type="text" id="celular2" name="celular2" >
+        </div>
+
+        <div class="resultado-form">
+          <label for="correo">Correo</label>
+          <input type="text" id="correo" name="correo" >
+        </div>
+
+        <div class="resultado-form">
+          <label for="estrato">Estrato</label>
+          <input type="text" id="estrato" name="estrato" >
+        </div>
+
+        <div class="resultado-form">
+          <label for="planBa">Plan</label>
+          <input type="text" id="planBa" name="planBa" readonly>
+        </div>
+
+        <div class="resultado-form">
+          <label for="decos">Decos</label>
+          <input type="text" id="decos" name="decos" readonly>
+        </div>
+
+        <div class="resultado-form">
+          <label for="asesor">Asesor</label>
+          <input type="text" id="asesor" name="asesor" readonly>
+        </div>
+
+
+        <div class="resultado-form">
+          <label for="back">Back</label>
+          <input type="text" id="back" name="back" value="WILMER ARENAS" readonly>
+        </div>
+
+        <div class="resultado-form">
+          <label for="base">Base</label>
+          <input type="text" id="base" name="base">
+        </div>
+     
+        <div id="observaciones-div">
+          <label for="observacionesBack">Observaciones</label>
+          <textarea name="observacionesBack" id="observacionesBack"></textarea>
+        </div>
+
+
+
+        <div id="gestionVenta">          
+        </div>
+      </form>
+
+      <div class="content-button" id="botonesFormulario">
+
+        <div id="DivBotonPlantilla">
+          <button onclick="" id="plantillaButton">Generar Plantilla</button>
+        </div>
+
+        <div id="DivBotonCreacionComp">
+          
+        </div>
+
+      </div>
+    </section>
+
+
+
+          
+      
+          <footer class="footer">
+            &copy; Wilmer Arenas; todos los derechos reservados - 2024
+          </footer>
+        </div>
+
+
+</body>
+</html>

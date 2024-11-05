@@ -1,0 +1,400 @@
+body {
+    background-color: #f5f8fa; /* Fondo gris claro, similar al de Twitter */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+    text-align: center; 
+    padding: 0;
+    margin: 0;
+}
+
+.layout { /* Corregido de 'layoud' a 'layout' */
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-areas: 
+        "header header header header"
+        "nav nav nav nav"
+        "content content content content"
+        "footer footer footer footer";
+    gap: 10px; 
+}
+
+.header {
+    grid-area: header;
+    border: none; /* Sin borde */
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 10px; /* Menos espaciado para una apariencia más compacta */
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+}
+
+.header .left {
+    display: flex; 
+    align-items: center; 
+}
+
+.header img {
+    width: 50px; 
+    border-radius: 50%; 
+    margin-right: 10px; /* Espacio reducido */
+}
+
+.header h1 {
+    font-size: 30px; /* Tamaño de fuente reducido */
+    color: #1da1f2; /* Azul de Twitter */
+    margin: 0; 
+    text-align: left; 
+}
+
+.title {
+    margin-right: 10px;
+}
+
+.searchForm {
+    display: flex; 
+    align-items: center; 
+}
+
+#searchForm input {
+    width: 400px; /* Ancho reducido para mayor compactidad */
+    padding: 8px; /* Espacio interno del input */
+    border: 1px solid #ccd6dd; /* Borde gris claro */
+    border-radius: 20px; /* Bordes más redondeados */
+}
+
+.button {
+    margin-left: 5px; 
+    padding: 8px 15px; 
+    background-color: #1da1f2; /* Azul de Twitter */
+    font-size: 16px;
+    font-weight: bold;
+    color: white; 
+    border: none; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+#searchForm button:hover {
+    background-color: #1991db; /* Color más oscuro al pasar el cursor */
+}
+
+.nav {
+    grid-area: nav;
+    border: none; /* Sin borde */
+    background-color: #ffffff; 
+    padding: 10px; 
+    text-align: right; /* Alinear el texto a la derecha */
+}
+
+.nav ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.nav li {
+    display: inline; 
+    margin: 0 15px; 
+    font-size: 18px; /* Tamaño de fuente aumentado a 14px */
+}
+
+.nav a {
+    text-decoration: none; /* Sin subrayado por defecto */
+    color: #1da1f2; /* Azul de Twitter */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.nav a:hover {
+    color: #19db49; /* Un tono verde más vibrante */
+    background-color: rgba(123, 240, 228, 0.3); /* Fondo verde con más opacidad */
+    box-shadow: 0 0 20px rgba(120, 242, 226, 0.7); /* Resplandor verde más intenso */
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s; /* Transiciones suaves */
+}
+
+/* Inicio estilos content */
+
+#resultado-busqueda {
+    display: flex; /* Usar flexbox para el formulario */
+    flex-wrap: wrap; /* Permitir que los divs se muevan a la siguiente línea */
+    justify-content:flex-start;
+    background: none;
+}
+
+.resultado-form {
+    width: 32%; /* Establecer el ancho del div */
+    display: flex; /* Cambiado a flex para alineación adecuada */
+    align-items: center; /* Alinear verticalmente los elementos */
+    margin-bottom: 1px; /* Espacio entre los campos */
+    padding: 1px; /* Espacio interno para separar el contenido del borde */
+    justify-content:flex-start; /* Espacio entre los elementos */
+}
+
+#gestionVenta{
+    display: flex; /* Usar flexbox para el formulario */
+    flex-wrap: wrap; /* Permitir que los divs se muevan a la siguiente línea */
+    justify-content:flex-start;
+    background: none;
+
+}
+
+#gestionVenta input {
+    flex: 2; /* Hacer el input más ancho que el label */
+    padding: 5px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 13px; /* Tamaño de fuente */
+    outline: none; /* Sin contorno al hacer foco */
+    transition: border-color 0.3s; /* Transición para el borde */
+    width: 350px; /* Ancho del input */
+}
+
+
+.resultado-form label {
+    flex: 1; /* Tomar el espacio disponible */
+    font-size: 16px; /* Tamaño de fuente para etiquetas */
+    color: #1da1f2; /* Color oscuro para el texto */
+    margin-right: 10px; /* Espacio entre el label y el input */
+    font-weight: bold; /* Etiquetas en negrita */
+}
+
+.resultado-form input {
+    flex: 2; /* Hacer el input más ancho que el label */
+    padding: 5px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 13px; /* Tamaño de fuente */
+    outline: none; /* Sin contorno al hacer foco */
+    transition: border-color 0.3s; /* Transición para el borde */
+    width: 350px; /* Ancho del input */
+}
+
+.resultado-form input:focus {
+    border-color: #1da1f2; /* Cambiar el color del borde al hacer foco */
+    box-shadow: 0 0 5px rgba(29, 161, 242, 0.5); /* Efecto de sombra al enfocar */
+}
+
+/* Fin estilos content */
+
+.content {
+    
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 20px; /* Espaciado interno */
+    margin: 20px 0; /* Margen externo */
+}
+
+/* Estilos para el contenedor de botones */
+.content-button {
+    display: flex; /* Usar flexbox para alinear botones */
+    justify-content: flex-end; /* Alinear botones a la derecha */
+    margin-top: 20px; /* Espacio superior para los botones */
+}
+
+.button {
+    padding: 10px 20px; /* Espaciado interno para los botones */
+    margin-left: 10px; /* Espacio entre botones */
+    background-color: #1da1f2; /* Color de fondo de los botones */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición para el color de fondo */
+}
+
+.button:hover {
+    background-color: #0a85d6; /* Color de fondo al pasar el ratón */
+}
+
+.form-row {
+    display: grid; /* Usamos Grid para organizar los campos */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    gap: 15px; /* Espacio entre columnas */
+    margin-bottom: 15px; /* Espacio debajo del grupo */
+}
+
+.form-group {
+    display: flex; /* Para alinear etiquetas e inputs */
+    flex-direction: column; /* Coloca etiqueta y input en columna */
+}
+
+.form-group label {
+    font-size: 14px; /* Tamaño de fuente para etiquetas */
+    color: #14171a; /* Color negro suave */
+    margin-bottom: 5px; /* Espacio debajo de las etiquetas */
+}
+
+.form-group input[type="text"] {
+    width: 80%; /* Ancho completo para entradas de texto */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccd6dd; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+button {
+    background-color: #1da1f2; /* Azul de Twitter */
+    color: white; /* Texto blanco */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    border: none; /* Sin borde */
+    border-radius: 20px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+button:hover {
+    background-color: #1991db; /* Color más oscuro al pasar el cursor */
+}
+
+.content {
+    grid-area: content;
+    border: none; /* Sin borde */
+    background-color: #ffffff; 
+    padding: 20px; 
+    border-radius: 10px; 
+}
+
+.footer {
+    grid-area: footer;
+    border: none; 
+    background-color: #ffffff; 
+    padding: 10px; 
+}
+
+.footer p {
+    margin: 0; 
+    color: #657786; /* Color gris suave */
+    font-size: 12px; /* Tamaño de fuente pequeño */
+}
+
+.footer a {
+    color: #1da1f2; /* Color de enlace */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Subrayar en hover */
+}
+
+/*inicio formulario subir archivo*/
+/* Estilos para el formulario de subida de archivo */
+#subir-archivo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-top: 20px; /* Separación superior */
+    width: 80%; /* Ancho relativo al contenedor */
+    max-width: 500px; /* Ancho máximo para evitar que sea demasiado grande */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+/* Estilos para el input de archivo */
+#subir-archivo input[type="file"] {
+    background-color: #f5f8fa;
+    padding: 10px;
+    border: 2px dashed #1da1f2; /* Borde azul de estilo dashed */
+    border-radius: 5px;
+    width: 100%; /* Ancho completo dentro del formulario */
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Suavizar transición */
+    margin-bottom: 15px; /* Espacio entre input y botón */
+}
+
+#subir-archivo input[type="file"]:hover {
+    border-color: #0a85d6; /* Color de borde al pasar el cursor */
+    box-shadow: 0 0 5px rgba(29, 161, 242, 0.5); /* Efecto de sombra al pasar */
+}
+
+/* Estilos para el botón de envío */
+#subir-archivo button[type="submit"] {
+    background-color: #1da1f2;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px; /* Bordes redondeados */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Transición suave */
+    width: 50%; /* Ancho de la mitad del contenedor */
+    max-width: 200px; /* Límite del ancho */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+#subir-archivo button[type="submit"]:hover {
+    background-color: #0a85d6; /* Color más oscuro al pasar el cursor */
+    transform: scale(1.05); /* Efecto de ampliación ligera */
+}
+
+#subir-archivo button[type="submit"]:active {
+    background-color: #1991db; /* Color de fondo en estado activo */
+    transform: scale(0.98); /* Reducir ligeramente el tamaño al hacer clic */
+}
+
+
+/* Estilos para el contenedor de observaciones */
+#observaciones-div {
+    display:flex; /* Usar flexbox para alinear etiquetas e inputs */
+    flex-direction:column; /* Colocar la etiqueta encima del textarea */
+    margin-bottom: 15px; /* Espacio debajo del contenedor */
+    width: 99%;
+    
+
+}
+
+#observaciones-div label {
+    font-size: 16px; /* Tamaño de fuente para la etiqueta */
+    color: #0a85d6; /* Color negro suave */
+    white-space: nowrap; /* Evitar que la etiqueta se envuelva */
+    justify-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+/* Estilos para el textarea */
+#observacionesBack {
+    width: 90%; /* Ancho completo dentro del contenedor */
+    min-height: 90px;
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccd6dd; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de fuente */
+    outline: none; /* Sin contorno al hacer foco */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    resize: vertical; /* Permitir que el usuario ajuste la altura del textarea */
+}
+
+/* Efectos al enfocar el textarea */
+#observacionesBack:focus {
+    border-color: #1da1f2; /* Cambiar el color del borde al hacer foco */
+    box-shadow: 0 0 5px rgba(29, 161, 242, 0.5); /* Efecto de sombra al enfocar */
+}
+
+
+/**/
+/* Centrar el formulario completo */
+.content {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    flex-direction: column; /* Apila los elementos en columna */
+    padding: 20px;
+}
+
+
+/* Estilos para el contenedor del textarea */
+#observaciones-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Hace que el contenedor ocupe todo el ancho */
+    margin-top: 20px; /* Espacio superior opcional */
+}
+
+

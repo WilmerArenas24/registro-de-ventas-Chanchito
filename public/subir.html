@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir archivo</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Ajusta esto si es necesario -->
+    <script src="./js/subir.js" defer></script>
+</head>
+<body>
+
+    <!--La cabecera-->
+    <header class="header">
+        <div class="left">
+            <img src="img/happy.png" alt="Logo de Chanchito Feliz">
+            <h1>Registro de ventas Chanchito Feliz</h1>
+        </div>
+        <div class="search">
+        </div>
+    </header> 
+
+    <!--Barra de navegación-->
+    <nav class="nav">
+        <ul>
+            <li><a href="work.html">Atrás</a></li>
+            
+        </ul>
+    </nav>
+
+    <!--Aquí van los resultados-->
+    <section class="content">
+        <h1>Subir archivo Excel</h1>
+        <form id="subir-archivo" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".xls,.xlsx" required>
+            <button type="button" onclick="uploadFile()" class="button">Subir</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        &copy; Wilmer Arenas; todos los derechos reservados - 2024
+    </footer>
+
+    <script>
+        function uploadFile() {
+            const form = document.getElementById('subir-archivo');
+            const formData = new FormData(form);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())  // Cambié a .text() si tu respuesta es en texto plano
+            .then(data => {
+                alert(data);  // Muestra el mensaje de éxito o error en un alert
+            })
+            .catch(error => {
+                alert('Error al subir el archivo');
+            });
+        }
+    </script>
+
+</body>
+</html>
